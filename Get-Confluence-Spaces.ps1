@@ -1,4 +1,6 @@
 ﻿# Get Confluence spaces and display them by name
+# Documentation: https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-space/#api-spaces-get
+
 # I am checking if the variables already exists, to be able to re-run the script several times without have to prmpte them every times
 if(!$email){
   $email = Read-Host "Your username (e-mail addresse)"
