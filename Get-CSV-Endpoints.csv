@@ -1,0 +1,10 @@
+# Import the CSV and confirm that all when well by checking the table header (Get-Member) and rows ( $value | Format-Table)
+$endpoints = Import-Csv ./endpoints_Full_Report_20280214_090909_UTC.csv
+$endpoints | Get-Member
+$endpoints | Format-Table
+
+# Export the selected values into a new csv
+$endpoints | 
+   Select-Object 'Endpoint Name', 'OS', 'Cloud Account', 'Cloud Tags' |
+   Sort-Object -Property 'Cloud Account' |
+   Export-Csv "endpoints_filtered_only_account_and_name.csv"
